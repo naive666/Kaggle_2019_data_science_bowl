@@ -43,6 +43,8 @@ This is a multi-category problem, but the method above I use regression method, 
 ## Result
 It is surprising that the CV score touchs 0.60, which is relatively high as compared to other competitors' CV score, but the result in public Leaderboard is not that impressive, only 0.532, roughly rank 1200 in public leaderboard. However, in another model (Kernel Version 11), my public score gets to 0.538, which is chosen as final submission. Unfortunately, the so-called best model score drops to 0.527 while the previous one lift from 0.532 to 0.535, which is top 10%. 
 
+Also, you can check my full result in my Kaggle pages. [Here](https://www.kaggle.com/naive666/data-science-bowl-2019?scriptVersionId=26828001)
+
 ## Contributors
 <a href="https://github.com/naive666"><img src="https://avatars2.githubusercontent.com/u/53068274?s=40&v=4&button=True" /></a>
 

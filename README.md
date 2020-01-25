@@ -21,3 +21,10 @@ PBS KIDS, a trusted name in early childhood education for decades, aims to gain 
 Data Science Bowl is the world’s largest data science competition focused on social good. Each year, this competition gives Kagglers a chance to use their passion to change the world. Over the last four years, more than 50,000+ Kagglers have submitted over 114,000+ submissions, to improve everything from lung cancer and heart disease detection to ocean health. 
 
 ## Feature Engineering
+Feature engineering is also regarded as the most important part of Kaggle.
+- **Generating New Features**  
+  Based on the demand of project, several new features are generated manually. I have to admit that this is a arduous work, and most ideas come from an experienced kaggler [Bruno Aquino](https://www.kaggle.com/braquino/convert-to-regression), whose open sourced idea also save most competitors in this game
+- **Check Distribution**    
+  Check feature distribution in train set and test set, if the distribution is obviously different, it is reasonable to eliminate such features. Also, I check if the feature contains too many zeros, which is ineffective for the final prediction.
+- **Change Json**    
+  It is not necessary in every model. I do so because some feature titles could not be recognized by lightgbm, and therefore needed to be changed in a readable format.

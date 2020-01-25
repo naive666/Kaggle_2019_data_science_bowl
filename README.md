@@ -5,8 +5,7 @@
    - [Introduction](#introduction)
    - [Description](#description)
    - [Feature Engineering](#feature-engineering)
-   - [Models](#models)
-   - [Summary](#summary)
+   - [Model](#model)
    - [Contributors](#contributors)
    
 ## Introduction
@@ -35,8 +34,17 @@ Feature engineering is also regarded as the most important part of Kaggle.
 - Select Top Features  
 Since there are over 900 features, and some of the features are not as crucial as others, reduce the influence of those feature may enhance the model performance. Therefore, I first use all features as input, and hypertune the parameters with Bayesian Optimization to get the best model with full features. Next, use this model to do 5 cross validations, and record the feature importance in each validation. Following that, calculate the average score in the 5 epochs of each feature, sort them afterward, and I get the rank of feature importance.   
 
--
+- Top Features Cross Validation
+It is very influencial to choose a threshold of feature importance, i.e. Above what average score should I choose the feature? After several trials, the features whose average importance score in the interval of 5 and 600 show impressive result. Then, use the selected features to cross validation. Owing to excessive data, runing the model in PC is seemingly not a good choice, I use the Kernel provided by Kaggle, but it still takes a lonf time to finish running.   
 
+- Result Transformation
+This is a multi-category problem, but the method above I use regression method, and thus the final step is to transfer the raw results to categories. Thanks to some Kaggle contributors, they apply percentile method to transfer data.
+
+## Result
+It is surprising that the CV score touchs 0.60, which is relatively high as compared to other competitors' CV score, but the result in public Leaderboard is not that impressive, only 0.532, roughly rank 1200 in public leaderboard. However, in another model (Kernel Version 11), my public score gets to 0.538, which is chosen as final submission. Unfortunately, the so-called best model score drops to 0.527 while the previous one lift from 0.532 to 0.535, which is top 10%. 
+
+## Contributors
+<a href="https://github.com/naive666"><img src="https://avatars2.githubusercontent.com/u/53068274?s=40&v=4&button=True" /></a>
 
 
 

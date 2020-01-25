@@ -23,8 +23,27 @@ Data Science Bowl is the world’s largest data science competition focused on s
 ## Feature Engineering
 Feature engineering is also regarded as the most important part of Kaggle.
 - **Generating New Features**  
-  Based on the demand of project, several new features are generated manually. I have to admit that this is a arduous work, and most ideas come from an experienced kaggler [Bruno Aquino](https://www.kaggle.com/braquino/convert-to-regression), whose open sourced idea also save most competitors in this game
+  Based on the demand of project, several new features are generated manually. I have to admit that this is a arduous work, and most ideas come from an experienced kaggler [Bruno Aquino](https://www.kaggle.com/braquino/convert-to-regression), whose open sourced idea also save most competitors in this game  
+  
 - **Check Distribution**    
-  Check feature distribution in train set and test set, if the distribution is obviously different, it is reasonable to eliminate such features. Also, I check if the feature contains too many zeros, which is ineffective for the final prediction.
+  Check feature distribution in train set and test set, if the distribution is obviously different, it is reasonable to eliminate such features. Also, I check if the feature contains too many zeros, which is ineffective for the final prediction  
+  
 - **Change Json**    
-  It is not necessary in every model. I do so because some feature titles could not be recognized by lightgbm, and therefore needed to be changed in a readable format.
+  It is not necessary in every model. I do so because some feature titles could not be recognized by lightgbm, and therefore needed to be changed in a readable format  
+  
+## Model
+- Select Top Features  
+Since there are over 900 features, and some of the features are not as crucial as others, reduce the influence of those feature may enhance the model performance. Therefore, I first use all features as input, and hypertune the parameters with Bayesian Optimization to get the best model with full features. Next, use this model to do 5 cross validations, and record the feature importance in each validation. Following that, calculate the average score in the 5 epochs of each feature, sort them afterward, and I get the rank of feature importance.   
+
+-
+
+
+
+
+
+
+
+
+
+
+
